@@ -48,11 +48,11 @@ const FurnitureForm = ({
     try {
       if (furniture.id) {
         await axios.put(
-          `http://localhost:8000/api/furniture/${furniture.id}`,
+          `${location.origin}/api/furniture/${furniture.id}`,
           furniture,
         )
       } else {
-        await axios.post('http://localhost:8000/api/furniture', furniture)
+        await axios.post(`${location.origin}/api/furniture`, furniture)
       }
       onFormSubmit()
     } catch (error) {

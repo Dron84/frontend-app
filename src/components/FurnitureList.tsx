@@ -20,7 +20,7 @@ const FurnitureList = ({ onEdit }: { onEdit: any }) => {
 
   const fetchFurniture = async () => {
     try {
-      const response = await axios.get('http://localhost:8000/api/furniture')
+      const response = await axios.get(`${location.origin}/api/furniture`)
       setFurniture(response.data)
     } catch (error) {
       console.error('Error fetching furniture:', error)
@@ -29,7 +29,7 @@ const FurnitureList = ({ onEdit }: { onEdit: any }) => {
 
   const handleDelete = async (id: string) => {
     try {
-      await axios.delete(`http://localhost:8000/api/furniture/${id}`)
+      await axios.delete(`${location.origin}/api/furniture/${id}`)
       fetchFurniture()
     } catch (error) {
       console.error('Error deleting furniture:', error)
